@@ -1,2 +1,2 @@
 streamlit>=1.32.0
-underthesea==6.8.4
+underthesea==9.2.11
