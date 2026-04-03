@@ -1,10 +1,2 @@
-# requirements.txt — Morphology & Sentiment tiếng Việt
-# Cài đặt: pip install -r requirements.txt
-
-# Giao diện web
 streamlit>=1.32.0
-
-# NLP tiếng Việt (tokenize, sentiment)
-underthesea>=6.8.0
-
-# re, collections — thư viện chuẩn Python, không cần cài thêm
+underthesea==6.8.4
