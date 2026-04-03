@@ -164,8 +164,8 @@ st.title("🧬 BÀI TẬP — Morphology & Sentiment tiếng Việt")
 if not UNDERTHESEA_AVAILABLE:
     st.error(
         "⚠️ **Không tìm thấy thư viện `underthesea`.**\n\n"
-        "Vui lòng cài đặt:\n```\npip install underthesea==6.8.4\n```\n"
-        "hoặc đảm bảo file `requirements.txt` đã có dòng `underthesea==6.8.4` "
+        "Vui lòng cài đặt:\n```\npip install underthesea==9.2.11\n```\n"
+        "hoặc đảm bảo file `requirements.txt` đã có dòng `underthesea==9.2.11` "
         "và deploy lại trên Streamlit Cloud."
     )
 
