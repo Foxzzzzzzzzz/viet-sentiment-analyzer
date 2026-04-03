@@ -1,3 +1,14 @@
+# Đại Học Lạc Hồng - Xử Lý Ngôn Ngữ Tự Nhiên - Cơ Sở Ngôn Ngữ Học
+Cơ Sở Ngôn Ngữ Học – Hỗ Trợ Xử Lý Ngôn Ngữ Tiếng Việt
+
+**Thông tin sinh viên:**
+
+| STT | Mã Số Sinh Viên | Họ và Tên |
+|-----|-----------------|-----------|
+| 1   | 123000007       | Trần Văn Hội |
+| 2   |                 |           |
+
+
 
 ***
 
