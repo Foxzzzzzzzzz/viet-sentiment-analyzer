@@ -19,7 +19,11 @@ import streamlit as st
 
 # TODO 1: Import word_tokenize và sentiment từ thư viện underthesea
 # ---- ĐÃ HOÀN THÀNH TODO 1 ----
-from underthesea import word_tokenize, sentiment
+try:
+    from underthesea import word_tokenize, sentiment
+    UNDERTHESEA_AVAILABLE = True
+except ImportError:
+    UNDERTHESEA_AVAILABLE = False
 # ------------------------------
 
 
@@ -80,6 +84,8 @@ def underthesea_tokenize(text: str):
       - tokens_list: list token
       - tokens_text: chuỗi token dạng text
     """
+    if not UNDERTHESEA_AVAILABLE:
+        return [], "⚠️ underthesea chưa được cài đặt"
     tokens_list = word_tokenize(text)                      # list token
     tokens_text = word_tokenize(text, format="text")       # chuỗi token
     return tokens_list, tokens_text
@@ -96,6 +102,8 @@ def safe_sentiment(text: str) -> str:
       - Nếu trả về list/tuple thì lấy phần tử đầu tiên.
       - Bọc trong try/except để tránh crash khi chưa tải model.
     """
+    if not UNDERTHESEA_AVAILABLE:
+        return "underthesea chưa được cài đặt"
     try:
         result = sentiment(text)
         # Một số phiên bản underthesea trả về list hoặc tuple
@@ -152,6 +160,14 @@ st.set_page_config(
 )
 
 st.title("🧬 BÀI TẬP — Morphology & Sentiment tiếng Việt")
+
+if not UNDERTHESEA_AVAILABLE:
+    st.error(
+        "⚠️ **Không tìm thấy thư viện `underthesea`.**\n\n"
+        "Vui lòng cài đặt:\n```\npip install underthesea==6.8.4\n```\n"
+        "hoặc đảm bảo file `requirements.txt` đã có dòng `underthesea==6.8.4` "
+        "và deploy lại trên Streamlit Cloud."
+    )
 
 st.markdown(
     """
